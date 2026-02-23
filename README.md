@@ -39,7 +39,7 @@ By following this roadmap, you should be able to:
 
 ---
 
-## Phase 0 — Foundation Setup (Week 0)
+## Phase 0 — Foundation Setup (Week 0)✅
 
 ### What to learn
 - How software projects are organized.
