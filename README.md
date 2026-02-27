@@ -14,7 +14,7 @@ I am using this repository to:
 - Track my progress publicly  
 - Document my learning journey  
 
----
+---https://x.com/thealleycoder
 
 ## 📘 About the Book
 
