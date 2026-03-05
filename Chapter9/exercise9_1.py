@@ -35,12 +35,33 @@ def set_number_served(self,set_number):
         """Set the numbers served"""
         self.number_served = set_number
         print(f"we served {self.number_served} people today in delhi branch")
+
 def increment_number_served(self,increase_number_served):
         """Increase the number of customer served"""
         self.number_served +=increase_number_served
         print(f"we served {self.number_served} customers including the other branch")
-new_Rest = Restaurant('chaska','italian')
-new_Rest.describe_restaurant()
-new_Rest.open_restaurant()
-new_Rest.set_number_served(12)
-new_Rest.increment_number_served(2)
+# new_Rest = Restaurant('chaska','italian')
+# new_Rest.describe_restaurant()
+# new_Rest.open_restaurant()
+# new_Rest.set_number_served(12)
+# new_Rest.increment_number_served(2)
+
+
+"""
+9-6. Ice Cream Stand: An ice cream stand is a specific kind of restaurant. Write
+a class called IceCreamStand that inherits from the Restaurant class you wrote in
+Exercise 9-1 (page 162) or Exercise 9-4 (page 166). Either version of the class
+will work; just pick the one you like better. Add an attribute called flavors that
+stores a list of ice cream flavors. Write a method that displays these flavors.
+Create an instance of IceCreamStand, and call this method.
+"""
+
+class Ice_Cream_Stand(Restaurant):
+    def __init__(self,name,cuisine_type):
+        super().__init__(name,cuisine_type)
+        self.flavours = ['vanilla','chocolate','strawberry']
+    def display_flavours(self):
+        for flavour in self.flavours:
+            print(f"The flavours available are {flavour}")
+iceCream = Ice_Cream_Stand('bbIceacream','desert')
+iceCream.display_flavours()
