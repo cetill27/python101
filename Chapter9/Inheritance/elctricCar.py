@@ -43,9 +43,13 @@ class Battery:
         """Print a statement about the range this battery provides """
         if self.battery_size ==40:
             range = 150
-        elif self.battery_size ==67:
+        elif self.battery_size ==65:
             range =25
         print(f"This car can go about {range} miles on a full charge ")
+    def upgrade_battery(self):
+        if self.battery_size !=65:
+            self.battery_size =65
+        
     
 class ElectricCar(Car):
     """Represent aspects of a car , specific to electric vehicles"""
@@ -66,15 +70,19 @@ class ElectricCar(Car):
 
 
     
-vayu = ElectricCar("Tesla",'Model S','2025')
-print(vayu.get_descriptive_name())
+# vayu = ElectricCar("Tesla",'Model S','2025')
+# print(vayu.get_descriptive_name())
 # vayu.describe_battery()
 # vayu.fill_gas_tank()
 
 #You can break your large class into smaller
 # classes that work together; this approach is called compositio
 
-vayu.battery.describe_battery()
+
+    
+vayu = ElectricCar("Tesla",'Model S','2025')
+vayu.battery.get_range()
+vayu.battery.upgrade_battery()
 vayu.battery.get_range()
 
 
