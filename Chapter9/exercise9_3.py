@@ -47,8 +47,37 @@ class User:
         self.login_attempts += 1
     def reset_login_attempt(self):
         self.login_attempts = 0
-user2 = User('alley','coder','1')
-user2.increment_login_attempts()
-user2.increment_login_attempts()
-user2.increment_login_attempts()
-user2.describe_user()
+# user2 = User('alley','coder','1')
+# user2.increment_login_attempts()
+# user2.increment_login_attempts()
+# user2.increment_login_attempts()
+# user2.describe_user()
+
+"""
+9-7. Admin: An administrator is a special kind of user. Write a class called
+Admin that inherits from the User class you wrote in Exercise 9-3 (page 162)
+or Exercise 9-5 (page 167). Add an attribute, privileges, that stores a list of
+strings like "can add post", "can delete post", "can ban user", and so on.
+Write a method called show_privileges() that lists the administrator’s set of
+privileges. Create an instance of Admin, and call your method.
+"""
+
+class Admin(User):
+    def __init__(self,first_name,last_name,login_attempts):
+        super().__init__(first_name,last_name,login_attempts)
+        self.privileges = Privileges()
+    # def show_privileges(self):
+    #     for privilege in self.privileges:
+    #         """Show Admin Privilege"""
+    #         print(f"Your Admin Privileges are : {privilege}")
+
+
+class Privileges:
+    def __init__(self,privileges = ['can add post','can delete post','can ban user']):
+       self.privileges = privileges
+    def show_privileges(self):
+        for privilege in self.privileges:
+            """Show Admin Privilege"""
+            print(f"Your Admin Privileges are : {privilege}")
+admin = Admin('alley','admin',1)
+admin.privileges.show_privileges()
